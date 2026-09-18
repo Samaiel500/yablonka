@@ -1,0 +1,263 @@
+.loyalty-page {
+  padding-bottom: 116px;
+}
+
+.loyalty-page__title {
+  margin: 75px 0 0;
+  color: var(--color-primary);
+  font-size: 34px;
+  font-weight: 600;
+  line-height: 44px;
+  text-transform: uppercase;
+}
+
+.loyalty-terms {
+  margin-top: 80px;
+}
+
+.loyalty-terms__title,
+.loyalty-faq__title {
+  margin: 0;
+  font-size: 34px;
+  font-weight: 600;
+  line-height: 44px;
+}
+
+.loyalty-terms__copy {
+  margin-top: 40px;
+  font-size: 18px;
+  line-height: 22px;
+}
+
+.loyalty-terms__paragraph {
+  margin: 0;
+}
+
+.loyalty-terms__paragraph + .loyalty-terms__paragraph {
+  margin-top: 22px;
+}
+
+.loyalty-faq {
+  max-width: 1210px;
+  margin-top: 132px;
+}
+
+.loyalty-faq__list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-top: 40px;
+}
+
+.loyalty-faq__item {
+  overflow: hidden;
+  border-radius: 33px;
+  background: #ffffff;
+  box-shadow: 0 31px 80px rgba(0, 0, 0, 0.07), 0 20px 47px rgba(0, 0, 0, 0.05), 0 12px 25px rgba(0, 0, 0, 0.04), 0 6px 13px rgba(0, 0, 0, 0.04), 0 3px 7px rgba(0, 0, 0, 0.03), 0 1px 3px rgba(0, 0, 0, 0.02);
+  transition: border-radius 280ms ease;
+}
+
+.loyalty-faq__item:has(> .loyalty-faq__details[open]) {
+  border-radius: 25px;
+}
+
+.loyalty-faq__question {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  min-height: 65px;
+  padding: 17px 40px 17px 35px;
+  cursor: pointer;
+  border-radius: 33px;
+  color: var(--color-primary);
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 23px;
+  list-style: none;
+  transition: background-color 180ms ease, border-radius 280ms ease;
+}
+
+.loyalty-faq__details[open] .loyalty-faq__question {
+  border-radius: 25px;
+}
+
+.loyalty-faq__question::-webkit-details-marker {
+  display: none;
+}
+
+.loyalty-faq__question:hover {
+  background: var(--color-page);
+}
+
+.loyalty-faq__question:focus-visible {
+  outline-offset: -3px;
+}
+
+.loyalty-faq__question:active {
+  background: var(--color-footer);
+}
+
+.loyalty-faq__question-text {
+  min-width: 0;
+}
+
+.loyalty-faq__icon {
+  position: relative;
+  flex: 0 0 31px;
+  width: 31px;
+  height: 31px;
+}
+
+.loyalty-faq__circle {
+  width: 31px;
+  height: 31px;
+}
+
+.loyalty-faq__arrow {
+  position: absolute;
+  top: 3.5px;
+  left: 9.5px;
+  width: 12px;
+  height: 24px;
+  transform: rotate(90deg);
+  transition: transform 180ms ease;
+}
+
+.loyalty-faq__details[open] .loyalty-faq__arrow {
+  transform: rotate(-90deg);
+}
+
+.loyalty-faq__content {
+  display: grid;
+  grid-template-rows: 0fr;
+  visibility: hidden;
+  transition: grid-template-rows 280ms cubic-bezier(0.4, 0, 0.2, 1), visibility 0s linear 280ms;
+}
+
+.loyalty-faq__details[open] + .loyalty-faq__content {
+  grid-template-rows: 1fr;
+  visibility: visible;
+  transition-delay: 0s;
+}
+
+.loyalty-faq__body {
+  min-height: 0;
+  overflow: hidden;
+}
+
+.loyalty-faq__answer {
+  margin: -4px 141px 0 35px;
+  padding-bottom: 31px;
+  color: #3b414a;
+  font-size: 16px;
+  line-height: 21px;
+}
+
+@media (max-width: 1199px) {
+  .loyalty-page {
+    padding-bottom: 90px;
+  }
+
+  .loyalty-page__title {
+    margin-top: 54px;
+    font-size: 31px;
+    line-height: 40px;
+  }
+
+  .loyalty-terms {
+    margin-top: 58px;
+  }
+
+  .loyalty-terms__title,
+  .loyalty-faq__title {
+    font-size: 31px;
+    line-height: 40px;
+  }
+
+  .loyalty-terms__copy {
+    margin-top: 30px;
+  }
+
+  .loyalty-faq {
+    margin-top: 88px;
+  }
+
+  .loyalty-faq__list {
+    margin-top: 30px;
+  }
+
+  .loyalty-faq__answer {
+    margin-right: 90px;
+  }
+}
+
+@media (max-width: 767px) {
+  .loyalty-page {
+    padding-bottom: 64px;
+  }
+
+  .loyalty-page__title {
+    margin-top: 43px;
+    font-size: 27px;
+    line-height: 33px;
+  }
+
+  .loyalty-terms {
+    margin-top: 38px;
+  }
+
+  .loyalty-terms__title,
+  .loyalty-faq__title {
+    font-size: 27px;
+    line-height: 33px;
+  }
+
+  .loyalty-terms__copy {
+    margin-top: 24px;
+    font-size: 16px;
+    line-height: 21px;
+  }
+
+  .loyalty-terms__paragraph + .loyalty-terms__paragraph {
+    margin-top: 18px;
+  }
+
+  .loyalty-faq {
+    margin-top: 54px;
+  }
+
+  .loyalty-faq__list {
+    gap: 16px;
+    margin-top: 24px;
+  }
+
+  .loyalty-faq__item,
+  .loyalty-faq__item:has(> .loyalty-faq__details[open]),
+  .loyalty-faq__question,
+  .loyalty-faq__details[open] .loyalty-faq__question {
+    border-radius: 24px;
+  }
+
+  .loyalty-faq__question {
+    gap: 16px;
+    min-height: 65px;
+    padding: 17px 20px;
+    font-size: 17px;
+    line-height: 22px;
+  }
+
+  .loyalty-faq__answer {
+    margin: 0 20px;
+    padding-bottom: 24px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .loyalty-faq__item,
+  .loyalty-faq__question,
+  .loyalty-faq__arrow,
+  .loyalty-faq__content {
+    transition: none;
+  }
+}
