@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Условия программы лояльности сети кондитерских «Яблонька» и ответы на часто задаваемые вопросы.">
+    <title>Программа лояльности — Яблонька</title>
+    <link rel="icon" href="images/logo.png" type="image/png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;600;700;800&family=Golos+Text:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="vendor/fancybox/fancybox-6.1.15.css">
+    <link rel="stylesheet" href="vendor/select2/select2-4.0.13.min.css">
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
+    <header class="site-header" data-site-header-root>
+      <div class="site-header__container">
+        <div class="site-header__top">
+          <a class="site-header__logo-link" href="index.html" aria-label="Яблонька — главная страница">
+            <img class="site-header__logo" src="images/logo.png" alt="Яблонька">
+          </a>
+
+          <button class="address-button" type="button" aria-label="Выберите адрес и способ получения" aria-haspopup="dialog" aria-controls="address-modal" data-address-modal-open>
+            <span class="address-button__text">Выберите адрес и способ получения</span>
+            <span class="address-button__icon-shell" aria-hidden="true">
+              <img class="address-button__circle" src="images/address-circle.svg" alt="">
+              <img class="address-button__pin" src="images/address-pin.svg" alt="">
+            </span>
+          </button>
+
+          <form class="site-search site-header__desktop-search" role="search">
+            <label class="visually-hidden" for="site-search-desktop">Поиск по сайту</label>
+            <input class="site-search__input" id="site-search-desktop" type="search" name="query" placeholder="Поиск">
+            <button class="site-search__button" type="submit" aria-label="Найти">
+              <img class="site-search__icon" src="images/search.svg" alt="">
+            </button>
+          </form>
+
+          <a class="site-header__phone" href="tel:88002509090" aria-label="Позвонить по номеру 8 (800) 250-90-90">
+            <span class="site-header__phone-icon" aria-hidden="true">
+              <img class="site-header__phone-icon-image" src="images/header-decoration.svg" alt="">
+            </span>
+            <span class="site-header__phone-text">8 (800) 250-90-90</span>
+          </a>
+
+          <a class="site-header__cart" href="#" aria-label="Корзина, 3 товара">
+            <span class="site-header__cart-icon-shell" aria-hidden="true">
+              <img class="site-header__cart-icon" src="images/cart.svg" alt="">
+              <span class="site-header__cart-count-shell">
+                <img class="site-header__cart-count-circle" src="images/cart-count.svg" alt="">
+                <span class="site-header__cart-count">3</span>
+              </span>
+            </span>
+            <span class="site-header__cart-text">Корзина</span>
+          </a>
+
+          <a class="site-header__account" href="#">
+            <img class="site-header__account-icon" src="images/account.svg" alt="">
+            <span>Войти</span>
+          </a>
+
+          <button class="site-header__menu-toggle" type="button" aria-expanded="false" aria-controls="site-navigation" aria-label="Открыть меню" data-menu-toggle>
+            <span class="site-header__menu-line"></span>
+            <span class="site-header__menu-line"></span>
+            <span class="site-header__menu-line"></span>
+          </button>
+        </div>
+
+        <nav class="site-nav" id="site-navigation" aria-label="Основная навигация">
+          <div class="site-nav__mobile-tools">
+            <form class="site-search site-nav__mobile-search" role="search">
+              <label class="visually-hidden" for="site-search-mobile">Поиск по сайту</label>
+              <input class="site-search__input" id="site-search-mobile" type="search" name="query" placeholder="Поиск">
+              <button class="site-search__button" type="submit" aria-label="Найти">
+                <img class="site-search__icon" src="images/search.svg" alt="">
+              </button>
+            </form>
+            <a class="site-nav__mobile-account" href="#">
+              <img class="site-nav__mobile-account-icon" src="images/account.svg" alt="">
+              <span>Войти</span>
+            </a>
+          </div>
+
+          <ul class="site-nav__list">
+            <li class="site-nav__item"><a class="site-nav__link" href="index.html">Главная</a></li>
+            <li class="site-nav__item"><a class="site-nav__link" href="about.html">О бренде</a></li>
+            <li class="site-nav__item"><a class="site-nav__link" href="loyalty.html" aria-current="page">Программа лояльности</a></li>
+            <li class="site-nav__item"><a class="site-nav__link" href="#">Новости</a></li>
+            <li class="site-nav__item"><a class="site-nav__link" href="#">Франшиза</a></li>
+            <li class="site-nav__item"><a class="site-nav__link" href="#">Вакансии</a></li>
+            <li class="site-nav__item"><a class="site-nav__link" href="#">Адреса</a></li>
+            <li class="site-nav__item"><a class="site-nav__link" href="#">Контакты</a></li>
+            <li class="site-nav__item"><a class="site-nav__link" href="#">Торты на заказ</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main class="loyalty-page">
+      <div class="container">
+        <nav class="breadcrumbs" aria-label="Хлебные крошки">
+          <a class="breadcrumbs__link" href="index.html">Главная</a>
+          <span class="breadcrumbs__separator" aria-hidden="true">/</span>
+          <span class="breadcrumbs__current" aria-current="page">Программа лояльности</span>
+        </nav>
+
+        <h1 class="loyalty-page__title">Программа лояльности</h1>
+
+        <section class="loyalty-terms" aria-labelledby="loyalty-terms-title">
+          <h2 class="loyalty-terms__title" id="loyalty-terms-title">Условия использования</h2>
+          <div class="loyalty-terms__copy">
+            <p class="loyalty-terms__paragraph"><strong>Начисление бонусов.</strong> Бонусы, начисленные в рамках стандартных условий (3% кешбэк), сгорают через 60 дней<br>
+              Если в рамках 60 дней покупки совершались, то бонусы пролонгируются.</p>
+            <p class="loyalty-terms__paragraph"><strong>Списание бонусов.</strong> Накопленными бонусами можно оплатить до 20% от суммы покупки (кроме товаров-исключений и акций).<br>
+              В рамках одной покупки (одного чека) возможно либо списание, либо начисление бонусов.</p>
+            <p class="loyalty-terms__paragraph"><strong>Срок действия.</strong> Бонусы, начисленные в рамках стандартных базовых условий (3% кешбэк), действуют в течении 60 дней (после - сгорают)<br>
+              Бонусы, начисленные в рамках подарка ко Дню Рождения, действуют в течении 7 дней (после - сгорают)</p>
+            <p class="loyalty-terms__paragraph"><strong>Прочее.</strong> С каждой покупки на карту начисляются бонусы в размере 3% от суммы покупки.<br>
+              1 бонус = 1 рубль.</p>
+          </div>
+        </section>
+
+        <section class="loyalty-faq" aria-labelledby="loyalty-faq-title">
+          <h2 class="loyalty-faq__title" id="loyalty-faq-title">Часто задаваемые вопросы</h2>
+          <div class="loyalty-faq__list">
+            <div class="loyalty-faq__item">
+              <details class="loyalty-faq__details" open>
+                <summary class="loyalty-faq__question" id="loyalty-faq-question-1" aria-controls="loyalty-faq-answer-1">
+                  <span class="loyalty-faq__question-text">Что даёт программа лояльности?</span>
+                  <span class="loyalty-faq__icon" aria-hidden="true">
+                    <img class="loyalty-faq__circle" src="images/loyalty/faq-circle.svg" alt="" width="31" height="31">
+                    <img class="loyalty-faq__arrow" src="images/loyalty/faq-arrow.svg" alt="" width="12" height="24">
+                  </span>
+                </summary>
+              </details>
+              <div class="loyalty-faq__content" id="loyalty-faq-answer-1" role="region" aria-labelledby="loyalty-faq-question-1">
+                <div class="loyalty-faq__body">
+                  <p class="loyalty-faq__answer">Да, бонусы начисляются за 3 дня до Дня Рождения и действуют в течение 7 дней (т.е. непосредственно в сам День Рождения, 3 дня до и 3 дня после). Рекомендуется зарегестрироваться в программе лояльности минимум за 4 дня до Дня Рождения, чтобы исключить возможное неначисление бонусов по техническим неполадкам. Использовать бонусы можно в сети кондитерских "Яблонька" (полный перечень указан ниже), списание бонусов не распространяется на торты на заказ, вечернюю скидку и другие акции.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="loyalty-faq__item">
+              <details class="loyalty-faq__details">
+                <summary class="loyalty-faq__question" id="loyalty-faq-question-2" aria-controls="loyalty-faq-answer-2">
+                  <span class="loyalty-faq__question-text">Начисляются ли бонусы на День Рождения?</span>
+                  <span class="loyalty-faq__icon" aria-hidden="true">
+                    <img class="loyalty-faq__circle" src="images/loyalty/faq-circle.svg" alt="" width="31" height="31">
+                    <img class="loyalty-faq__arrow" src="images/loyalty/faq-arrow.svg" alt="" width="12" height="24">
+                  </span>
+                </summary>
+              </details>
+              <div class="loyalty-faq__content" id="loyalty-faq-answer-2" role="region" aria-labelledby="loyalty-faq-question-2">
+                <div class="loyalty-faq__body">
+                  <p class="loyalty-faq__answer">Да, бонусы начисляются за 3 дня до Дня Рождения и действуют в течение 7 дней (т.е. непосредственно в сам День Рождения, 3 дня до и 3 дня после). Рекомендуется зарегестрироваться в программе лояльности минимум за 4 дня до Дня Рождения, чтобы исключить возможное неначисление бонусов по техническим неполадкам. Использовать бонусы можно в сети кондитерских "Яблонька" (полный перечень указан ниже), списание бонусов не распространяется на торты на заказ, вечернюю скидку и другие акции.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="loyalty-faq__item">
+              <details class="loyalty-faq__details">
+                <summary class="loyalty-faq__question" id="loyalty-faq-question-3" aria-controls="loyalty-faq-answer-3">
+                  <span class="loyalty-faq__question-text">Как узнать, сколько бонусов на моей карте?</span>
+                  <span class="loyalty-faq__icon" aria-hidden="true">
+                    <img class="loyalty-faq__circle" src="images/loyalty/faq-circle.svg" alt="" width="31" height="31">
+                    <img class="loyalty-faq__arrow" src="images/loyalty/faq-arrow.svg" alt="" width="12" height="24">
+                  </span>
+                </summary>
+              </details>
+              <div class="loyalty-faq__content" id="loyalty-faq-answer-3" role="region" aria-labelledby="loyalty-faq-question-3">
+                <div class="loyalty-faq__body">
+                  <p class="loyalty-faq__answer">Да, бонусы начисляются за 3 дня до Дня Рождения и действуют в течение 7 дней (т.е. непосредственно в сам День Рождения, 3 дня до и 3 дня после). Рекомендуется зарегестрироваться в программе лояльности минимум за 4 дня до Дня Рождения, чтобы исключить возможное неначисление бонусов по техническим неполадкам. Использовать бонусы можно в сети кондитерских "Яблонька" (полный перечень указан ниже), списание бонусов не распространяется на торты на заказ, вечернюю скидку и другие акции.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="loyalty-faq__item">
+              <details class="loyalty-faq__details">
+                <summary class="loyalty-faq__question" id="loyalty-faq-question-4" aria-controls="loyalty-faq-answer-4">
+                  <span class="loyalty-faq__question-text">Как накапливаются и списываются бонусы?</span>
+                  <span class="loyalty-faq__icon" aria-hidden="true">
+                    <img class="loyalty-faq__circle" src="images/loyalty/faq-circle.svg" alt="" width="31" height="31">
+                    <img class="loyalty-faq__arrow" src="images/loyalty/faq-arrow.svg" alt="" width="12" height="24">
+                  </span>
+                </summary>
+              </details>
+              <div class="loyalty-faq__content" id="loyalty-faq-answer-4" role="region" aria-labelledby="loyalty-faq-question-4">
+                <div class="loyalty-faq__body">
+                  <p class="loyalty-faq__answer">Да, бонусы начисляются за 3 дня до Дня Рождения и действуют в течение 7 дней (т.е. непосредственно в сам День Рождения, 3 дня до и 3 дня после). Рекомендуется зарегестрироваться в программе лояльности минимум за 4 дня до Дня Рождения, чтобы исключить возможное неначисление бонусов по техническим неполадкам. Использовать бонусы можно в сети кондитерских "Яблонька" (полный перечень указан ниже), списание бонусов не распространяется на торты на заказ, вечернюю скидку и другие акции.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="loyalty-faq__item">
+              <details class="loyalty-faq__details">
+                <summary class="loyalty-faq__question" id="loyalty-faq-question-5" aria-controls="loyalty-faq-answer-5">
+                  <span class="loyalty-faq__question-text">За покупку каких товаров/продуктов начисляется кешбэк?</span>
+                  <span class="loyalty-faq__icon" aria-hidden="true">
+                    <img class="loyalty-faq__circle" src="images/loyalty/faq-circle.svg" alt="" width="31" height="31">
+                    <img class="loyalty-faq__arrow" src="images/loyalty/faq-arrow.svg" alt="" width="12" height="24">
+                  </span>
+                </summary>
+              </details>
+              <div class="loyalty-faq__content" id="loyalty-faq-answer-5" role="region" aria-labelledby="loyalty-faq-question-5">
+                <div class="loyalty-faq__body">
+                  <p class="loyalty-faq__answer">Да, бонусы начисляются за 3 дня до Дня Рождения и действуют в течение 7 дней (т.е. непосредственно в сам День Рождения, 3 дня до и 3 дня после). Рекомендуется зарегестрироваться в программе лояльности минимум за 4 дня до Дня Рождения, чтобы исключить возможное неначисление бонусов по техническим неполадкам. Использовать бонусы можно в сети кондитерских "Яблонька" (полный перечень указан ниже), списание бонусов не распространяется на торты на заказ, вечернюю скидку и другие акции.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <div class="site-footer__top">
+          <div class="site-footer__brand">
+            <a class="site-footer__logo-link" href="index.html" aria-label="Яблонька — главная страница">
+              <img class="site-footer__logo" src="images/logo.png" alt="Яблонька">
+            </a>
+          </div>
+
+          <section class="site-footer__column" aria-labelledby="footer-sections">
+            <h2 class="site-footer__title" id="footer-sections">РАЗДЕЛЫ</h2>
+            <ul class="site-footer__list">
+              <li><a class="site-footer__link" href="about.html">О бренде</a></li>
+              <li><a class="site-footer__link" href="#">Акции</a></li>
+              <li><a class="site-footer__link" href="#">Новости</a></li>
+              <li><a class="site-footer__link" href="#">Франшиза</a></li>
+              <li><a class="site-footer__link" href="#">Вакансии</a></li>
+            </ul>
+          </section>
+
+          <section class="site-footer__column" aria-labelledby="footer-customers">
+            <h2 class="site-footer__title" id="footer-customers">ПОКУПАТЕЛЯМ</h2>
+            <ul class="site-footer__list">
+              <li><a class="site-footer__link" href="loyalty.html">Программа лояльности</a></li>
+              <li><a class="site-footer__link" href="#">Подарочные сертификаты</a></li>
+              <li><a class="site-footer__link" href="#">Адреса кондитерских</a></li>
+              <li><a class="site-footer__link" href="#">Служба качества</a></li>
+            </ul>
+          </section>
+
+          <section class="site-footer__contacts" aria-labelledby="footer-contacts">
+            <h2 class="site-footer__title" id="footer-contacts">КОНТАКТЫ И СОЦСЕТИ</h2>
+            <a class="site-footer__phone" href="tel:88002509090">8 (800) 250-90-90</a>
+            <a class="site-footer__email" href="mailto:info@_________.ru">info@_________.ru</a>
+            <div class="site-footer__socials">
+              <a class="site-footer__social-link" href="#" aria-label="VK">
+                <span class="site-footer__social-label">VK</span>
+              </a>
+              <a class="site-footer__social-link" href="#" aria-label="TG">
+                <span class="site-footer__social-label">TG</span>
+              </a>
+              <a class="site-footer__social-link" href="#" aria-label="TG">
+                <span class="site-footer__social-label">MAX</span>
+              </a>
+            </div>
+          </section>
+        </div>
+
+        <div class="site-footer__bottom">
+          <a class="site-footer__legal-link" href="#">Политика обработки персональных данных</a>
+          <a class="site-footer__legal-link" href="#">Политика конфиденциальности</a>
+          <a class="site-footer__legal-link" href="#">Пользовательское соглашение</a>
+        </div>
+      </div>
+    </footer>
+
+    <div class="address-modal" id="address-modal" data-display="block" data-selectable>
+      <div class="address-modal__window">
+        <div class="address-modal__header">
+          <h2 class="address-modal__title" id="address-modal-title">Мои адреса</h2>
+          <button class="address-modal__close" type="button" aria-label="Закрыть окно выбора адреса" data-address-modal-close data-fancybox-close autofocus>
+            <img class="address-modal__close-icon" src="images/modal-close.svg" alt="" width="29" height="29">
+          </button>
+        </div>
+
+        <form class="address-modal__form" data-address-form>
+          <div class="address-tabs" role="tablist" aria-label="Способ получения заказа">
+            <button class="address-tabs__tab address-tabs__tab--active" id="address-tab-delivery" type="button" role="tab" aria-selected="true" aria-controls="address-panel-delivery" data-address-tab="delivery">
+              <span class="address-tabs__icon-shell" aria-hidden="true">
+                <img class="address-tabs__icon address-tabs__icon--default" src="images/delivery.svg" alt="" width="24" height="24">
+                <img class="address-tabs__icon address-tabs__icon--active" src="images/delivery-active.svg" alt="" width="24" height="24">
+              </span>
+              Доставка
+            </button>
+            <button class="address-tabs__tab" id="address-tab-pickup" type="button" role="tab" aria-selected="false" aria-controls="address-panel-pickup" tabindex="-1" data-address-tab="pickup">
+              <span class="address-tabs__icon-shell address-tabs__icon-shell--pickup" aria-hidden="true">
+                <img class="address-tabs__icon address-tabs__icon--default" src="images/pickup.svg" alt="" width="21" height="19">
+                <img class="address-tabs__icon address-tabs__icon--active" src="images/pickup-active.svg" alt="" width="21" height="19">
+              </span>
+              Самовывоз
+            </button>
+          </div>
+
+          <p class="address-modal__description" id="address-modal-description">От указанного адреса и способа получения заказа зависит ассортимент и цены на товары</p>
+          <a class="address-modal__map-link" href="#">Посмотреть все ПВЗ на карте</a>
+
+          <div class="address-modal__panel" id="address-panel-delivery" role="tabpanel" aria-labelledby="address-tab-delivery" data-address-panel="delivery">
+            <div class="address-select">
+              <label class="visually-hidden" for="delivery-address">Адрес доставки</label>
+              <!-- Демонстрационные варианты: заменить адресами из бэкенда. -->
+              <select class="address-select__input" id="delivery-address" name="delivery-address" data-address-select="delivery" data-placeholder="Выберите адрес доставки">
+                <option value=""></option>
+                <option value="delivery-radishcheva">г. Саратов, ул. Радищева, 24</option>
+                <option value="delivery-gorkogo">г. Саратов, ул. Горького, 35</option>
+                <option value="delivery-moskovskaya">г. Саратов, ул. Московская, 72</option>
+                <option value="delivery-chapaeva">г. Саратов, ул. Чапаева, 56</option>
+                <option value="delivery-stroiteley">г. Саратов, пр-т Строителей, 36</option>
+                <option value="delivery-chekhova">г. Саратов, ул. Чехова, 2</option>
+                <option value="delivery-lebedeva">г. Саратов, ул. Лебедева-Кумача, 70</option>
+                <option value="delivery-burovaya">г. Саратов, ул. Буровая, 25</option>
+                <option value="delivery-engels">г. Энгельс, ул. Тельмана, 10</option>
+                <option value="delivery-balakovo">г. Балаково, ул. Ленина, 20</option>
+              </select>
+              <button class="address-select__clear" type="button" aria-label="Очистить адрес доставки" hidden data-address-clear="delivery"></button>
+            </div>
+          </div>
+
+          <div class="address-modal__panel" id="address-panel-pickup" role="tabpanel" aria-labelledby="address-tab-pickup" hidden data-address-panel="pickup">
+            <div class="address-select">
+              <label class="visually-hidden" for="pickup-address">Адрес кондитерской для самовывоза</label>
+              <!-- Демонстрационные варианты из макета: заменить данными бэкенда. -->
+              <select class="address-select__input" id="pickup-address" name="pickup-address" data-address-select="pickup" data-placeholder="Выберите адрес кондитерской">
+                <option value=""></option>
+                <option value="pickup-radishcheva">г. Саратов, ул. Радищева, 24</option>
+                <option value="pickup-batavina">г. Саратов, ул. Батавина, 1</option>
+                <option value="pickup-happy-mall-1">г. Саратов, Вольский тракт, 2 (ТК «Happy Молл 1»)</option>
+                <option value="pickup-happy-mall-2">г. Саратов, Вольский тракт, 2/1 (ТК «Happy Молл 2»)</option>
+                <option value="pickup-stroiteley-36">г. Саратов, пр-т Строителей, 36</option>
+                <option value="pickup-chekhova">г. Саратов, ул. Чехова, 2</option>
+                <option value="pickup-tau">г. Саратов, ул. 3-я Дачная (ТРЦ «ТАУ Галерея»)</option>
+                <option value="pickup-tau-opposite">г. Саратов, ул. 3-я Дачная (напротив ТРЦ «ТАУ Галерея»)</option>
+                <option value="pickup-lebedeva">г. Саратов, ул. Лебедева Кумача, 70к</option>
+                <option value="pickup-atrio">г. Саратов, пр-т Строителей, 1 (ТЦ «АТРИО»)</option>
+                <option value="pickup-burovaya">г. Саратов, ул. Буровая, 25</option>
+              </select>
+              <button class="address-select__clear" type="button" aria-label="Очистить адрес самовывоза" hidden data-address-clear="pickup"></button>
+            </div>
+          </div>
+
+          <button class="address-modal__confirm" type="submit" disabled>Подтвердить</button>
+        </form>
+      </div>
+    </div>
+
+    <script src="vendor/jquery/jquery-3.7.1.min.js" defer></script>
+    <script src="vendor/select2/select2-4.0.13.min.js" defer></script>
+    <script src="vendor/fancybox/fancybox-6.1.15.umd.js" defer></script>
+    <script type="module" src="js/app.js"></script>
+  </body>
+</html>
