@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Каталог тортов и десертов кондитерской «Яблонька».">
+    <meta name="description" content="">
     <title>Каталог — Торты — Яблонька</title>
     <link rel="icon" href="images/logo.png" type="image/png">
 
@@ -92,7 +92,7 @@
             <li class="site-nav__item"><a class="site-nav__link" href="#">Франшиза</a></li>
             <li class="site-nav__item"><a class="site-nav__link" href="#">Вакансии</a></li>
             <li class="site-nav__item"><a class="site-nav__link" href="#">Адреса</a></li>
-            <li class="site-nav__item"><a class="site-nav__link" href="#">Контакты</a></li>
+            <li class="site-nav__item"><a class="site-nav__link" href="contacts.html">Контакты</a></li>
             <li class="site-nav__item"><a class="site-nav__link" href="#" aria-current="page">Торты на заказ</a></li>
           </ul>
         </nav>
@@ -120,7 +120,6 @@
           </button>
 
           <div class="catalog__layout">
-            <!-- Статический макет для Битрикс: категории не фильтруют товары. -->
             <span hidden data-catalog-categories-home></span>
             <section class="catalog-categories" aria-labelledby="catalog-categories-title">
               <h2 class="visually-hidden" id="catalog-categories-title">Категории каталога</h2>
@@ -177,7 +176,6 @@
             </section>
 
             <div class="catalog__products">
-              <!-- Сортировка и пагинация не меняют выдачу. Логику подключает Битрикс. -->
               <span hidden data-catalog-sort-home></span>
               <div class="catalog-sort" role="group" aria-labelledby="catalog-sort-title">
                 <span class="catalog-sort__label" id="catalog-sort-title">Сортировать:</span>
@@ -191,8 +189,6 @@
                 </div>
               </div>
 
-              <!-- Демонстрационные данные из Figma. Заменить href и данные при интеграции.
-                   «В корзину» — отдельная кнопка вне ссылки, пока без обработчика. -->
               <div class="catalog__grid">
               <article class="product-card product-card--catalog">
                 <a class="product-card__details" href="product.html" aria-labelledby="catalog-product-1">
@@ -354,7 +350,7 @@
               <li><a class="site-footer__link" href="loyalty.html">Программа лояльности</a></li>
               <li><a class="site-footer__link" href="#">Подарочные сертификаты</a></li>
               <li><a class="site-footer__link" href="#">Адреса кондитерских</a></li>
-              <li><a class="site-footer__link" href="#">Служба качества</a></li>
+              <li><a class="site-footer__link" href="contacts.html#quality-service">Служба качества</a></li>
             </ul>
           </section>
 
@@ -417,7 +413,6 @@
           <div class="address-modal__panel" id="address-panel-delivery" role="tabpanel" aria-labelledby="address-tab-delivery" data-address-panel="delivery">
             <div class="address-select">
               <label class="visually-hidden" for="delivery-address">Адрес доставки</label>
-              <!-- Демонстрационные варианты: заменить адресами из бэкенда. -->
               <select class="address-select__input" id="delivery-address" name="delivery-address" data-address-select="delivery" data-placeholder="Выберите адрес доставки">
                 <option value=""></option>
                 <option value="delivery-radishcheva">г. Саратов, ул. Радищева, 24</option>
@@ -438,7 +433,6 @@
           <div class="address-modal__panel" id="address-panel-pickup" role="tabpanel" aria-labelledby="address-tab-pickup" hidden data-address-panel="pickup">
             <div class="address-select">
               <label class="visually-hidden" for="pickup-address">Адрес кондитерской для самовывоза</label>
-              <!-- Демонстрационные варианты из макета: заменить данными бэкенда. -->
               <select class="address-select__input" id="pickup-address" name="pickup-address" data-address-select="pickup" data-placeholder="Выберите адрес кондитерской">
                 <option value=""></option>
                 <option value="pickup-radishcheva">г. Саратов, ул. Радищева, 24</option>
@@ -472,7 +466,6 @@
         </div>
         <div class="catalog-controls-modal__body">
           <h3 class="catalog-controls-modal__subtitle">Категории</h3>
-          <!-- Существующие блоки перемещаются сюда без клонирования. -->
           <div data-catalog-categories-slot></div>
           <div data-catalog-sort-slot></div>
           <button class="catalog-controls-modal__done" type="button" data-fancybox-close>Закрыть</button>

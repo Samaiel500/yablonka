@@ -81,8 +81,6 @@ export function initAddressModal() {
     });
 
     $(select).on("select2:open", function () {
-      // Select2 фиксирует прокрутку родителей для позиционирования списка.
-      // Здесь список находится внутри поля и прокручивается вместе с Fancybox.
       instance.$container.closest(".fancybox__slide").off("scroll.select2." + instance.id);
       const search = instance.$dropdown.find(".select2-search__field");
       search.attr({
@@ -100,8 +98,6 @@ export function initAddressModal() {
       updateClearButton(select);
     });
 
-    // Select2 закрывает список при mousedown вне своего контейнера.
-    // Кнопка очистки — соседний элемент; сохраняем список до обработки клика.
     clearButton.addEventListener("mousedown", function (event) {
       event.preventDefault();
       event.stopPropagation();
@@ -170,7 +166,6 @@ export function initAddressModal() {
           modal.querySelector("[data-address-modal-close]").focus({ preventScroll: true });
         },
         keydown: function (instance, event) {
-          // Первый Escape закрывает Select2, следующий — Fancybox.
           if (event.key === "Escape" && $(selects[activeMode]).data("select2").isOpen()) {
             event.preventDefault();
             closeDropdowns();
@@ -217,7 +212,7 @@ export function initAddressModal() {
     openButton.title = modeLabel + ": " + address;
     openButton.dataset.receivingMode = activeMode;
     openButton.dataset.addressId = select.value;
-    // Событие для будущей интеграции; запросы к бэкенду не выполняются.
+    
     openButton.dispatchEvent(new CustomEvent("address:change", {
       bubbles: true,
       detail: { mode: activeMode, id: select.value, address: address }

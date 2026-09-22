@@ -59,7 +59,6 @@ export function initCatalogControls() {
         destroy: function () {
           restoreControls();
           if (!compactLayout.matches) {
-            // После удаления модального dialog страница снова доступна для фокуса.
             window.requestAnimationFrame(function () {
               if (!compactLayout.matches) {
                 categories.querySelector("a").focus({ preventScroll: true });
