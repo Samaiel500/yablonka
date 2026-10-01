@@ -188,6 +188,10 @@
   flex-shrink: 0;
   width: 11px;
   height: 8px;
+  transition-duration: 0.2s;
+}
+
+.catalog-sort__arrow--down {
   transform: rotate(180deg);
 }
 

@@ -77,7 +77,7 @@ export function initAddressModal() {
   function isDeliveryValid() {
     return selectedDeliveryStreet &&
       selects.delivery.value === selectedDeliveryStreet.id &&
-      /^[0-9]+$/.test(houseInput.value);
+      Boolean(houseInput.value.trim());
   }
 
   function isPickupValid() {
@@ -412,7 +412,6 @@ export function initAddressModal() {
   });
 
   houseInput.addEventListener("input", function () {
-    houseInput.value = houseInput.value.replace(/\D/g, "");
     updateConfirmButton();
   });
 
@@ -510,7 +509,7 @@ export function initAddressModal() {
       return;
     }
     const streetAddress = select.options[select.selectedIndex].textContent.trim();
-    const house = activeMode === "delivery" ? houseInput.value : null;
+    const house = activeMode === "delivery" ? houseInput.value.trim() : null;
     const address = house ? streetAddress + ", д. " + house : streetAddress;
     const modeLabel = activeMode === "delivery" ? "Доставка" : "Самовывоз";
     confirmedSelection = {
