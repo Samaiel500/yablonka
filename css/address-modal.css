@@ -200,11 +200,17 @@
 .address-modal__map-link {
   display: inline-block;
   margin-top: 20px;
+  padding: 0;
+  border: 0;
+  background: none;
   color: var(--color-primary);
+  font-family: inherit;
   font-size: 18px;
   line-height: 24px;
+  text-align: left;
   text-decoration: underline;
   text-underline-offset: 2px;
+  cursor: pointer;
 }
 
 .address-modal__map-link:hover {
@@ -215,8 +221,57 @@
   color: #2d100e;
 }
 
+.address-modal__map-link:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 4px;
+}
+
 .address-modal__panel {
   margin-top: 28px;
+}
+
+.address-modal__panel--pickup {
+  margin-top: 0;
+}
+
+.address-modal__panel--pickup .address-select {
+  margin-top: 28px;
+}
+
+.address-modal__delivery-fields {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 148px;
+  gap: 12px;
+}
+
+.address-modal__house-field {
+  min-width: 0;
+}
+
+.address-modal__house-input {
+  width: 100%;
+  height: 58px;
+  padding: 0 20px;
+  border: 1px solid #c3c3c3;
+  border-radius: 13px;
+  background: #fffdfd;
+  color: #000000;
+  font-family: var(--font-interface);
+  font-size: 18px;
+}
+
+.address-modal__house-input::placeholder {
+  color: #97979e;
+  opacity: 1;
+}
+
+.address-modal__house-input:hover {
+  border-color: var(--color-primary);
+}
+
+.address-modal__house-input:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 3px;
 }
 
 .address-select {
@@ -433,6 +488,196 @@
   cursor: default;
 }
 
+.pickup-map {
+  display: none;
+  width: 1000px;
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+  background: transparent;
+  color: var(--color-text);
+}
+
+.pickup-map-fancybox {
+  --fancybox-backdrop-bg: rgba(0, 0, 0, 0.46);
+  --f-html-padding: 0px;
+  --f-html-bg: transparent;
+  --f-html-color: var(--color-text);
+}
+
+.pickup-map-fancybox .fancybox__slide {
+  padding: 32px 24px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+
+.pickup-map-fancybox .fancybox__slide::before,
+.pickup-map-fancybox .fancybox__slide::after {
+  content: none;
+}
+
+.pickup-map-fancybox .pickup-map {
+  overflow: visible;
+}
+
+.pickup-map__window {
+  position: relative;
+  width: 1000px;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 32px;
+  border-radius: 28px;
+  background: var(--color-footer);
+  font-family: var(--font-interface);
+}
+
+.pickup-map__header {
+  display: flex;
+  align-items: center;
+  min-height: 44px;
+  padding-right: 48px;
+}
+
+.pickup-map__title {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: 34px;
+  font-weight: 600;
+  line-height: 44px;
+}
+
+.pickup-map__close {
+  position: absolute;
+  top: 32px;
+  right: 24px;
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.pickup-map__close img {
+  width: 29px;
+  height: 29px;
+}
+
+.pickup-map__close:hover {
+  background: rgba(103, 56, 52, 0.08);
+}
+
+.pickup-map__close:active {
+  background: rgba(103, 56, 52, 0.16);
+}
+
+.pickup-map__description {
+  margin: 12px 0 20px;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.pickup-map__map-shell {
+  position: relative;
+  height: 560px;
+  overflow: hidden;
+  border-radius: 18px;
+  background: #eee1d3;
+}
+
+.pickup-map__map-shell:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 3px;
+}
+
+.pickup-map__canvas {
+  width: 100%;
+  height: 100%;
+}
+
+.pickup-map__status {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 1;
+  width: calc(100% - 32px);
+  max-width: 440px;
+  margin: 0;
+  padding: 20px;
+  border-radius: 12px;
+  background: #fffdfd;
+  box-shadow: 0 7px 25px rgba(0, 0, 0, 0.12);
+  font-size: 16px;
+  line-height: 22px;
+  text-align: center;
+  transform: translate(-50%, -50%);
+}
+
+.pickup-map__status[hidden],
+.pickup-map__card[hidden] {
+  display: none;
+}
+
+.pickup-map__card {
+  position: absolute;
+  bottom: 16px;
+  left: 16px;
+  z-index: 2;
+  width: 360px;
+  max-width: calc(100% - 32px);
+  max-height: calc(100% - 32px);
+  padding: 20px;
+  overflow-y: auto;
+  border-radius: 14px;
+  background: #fffdfd;
+  box-shadow: 0 7px 25px rgba(0, 0, 0, 0.16);
+}
+
+.pickup-map__card-title {
+  margin: 0 0 10px;
+  color: var(--color-primary);
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 26px;
+}
+
+.pickup-map__card-address,
+.pickup-map__card-detail {
+  margin: 0 0 8px;
+  font-size: 15px;
+  line-height: 21px;
+}
+
+.pickup-map__select {
+  min-width: 150px;
+  min-height: 44px;
+  margin-top: 8px;
+  padding: 10px 18px;
+  border-radius: 10px;
+  background: #fea401;
+  color: #ffffff;
+  font-family: inherit;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 24px;
+  cursor: pointer;
+}
+
+.pickup-map__select:hover {
+  background: #ed9800;
+}
+
+.pickup-map__select:active {
+  background: #d88a00;
+}
+
+.pickup-map__close:focus-visible,
+.pickup-map__select:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 3px;
+}
+
 @media (max-width: 1199px) {
   .address-fancybox .fancybox__slide {
     padding-top: 96px;
@@ -498,6 +743,24 @@
     margin-top: 20px;
   }
 
+  .address-modal__panel--pickup {
+    margin-top: 0;
+  }
+
+  .address-modal__panel--pickup .address-select {
+    margin-top: 20px;
+  }
+
+  .address-modal__delivery-fields {
+    grid-template-columns: minmax(0, 1fr) 90px;
+    gap: 8px;
+  }
+
+  .address-modal__house-input {
+    padding: 0 12px;
+    font-size: 16px;
+  }
+
   .address-select .select2-selection--single .select2-selection__rendered,
   .address-select .select2-search--dropdown .select2-search__field {
     padding-left: 14px;
@@ -529,6 +792,54 @@
     padding: 14px 20px;
     font-size: 16px;
   }
+
+  .pickup-map-fancybox .fancybox__slide {
+    padding: 16px;
+  }
+
+  .pickup-map__window {
+    padding: 24px 16px;
+    border-radius: 20px;
+  }
+
+  .pickup-map__header {
+    padding-right: 44px;
+  }
+
+  .pickup-map__title {
+    font-size: 27px;
+    line-height: 36px;
+  }
+
+  .pickup-map__close {
+    top: 20px;
+    right: 10px;
+  }
+
+  .pickup-map__description {
+    margin: 12px 0 16px;
+    font-size: 16px;
+    line-height: 22px;
+  }
+
+  .pickup-map__map-shell {
+    height: 500px;
+    border-radius: 12px;
+  }
+
+  .pickup-map__card {
+    bottom: 10px;
+    left: 10px;
+    max-width: calc(100% - 20px);
+    max-height: calc(100% - 20px);
+    padding: 16px;
+  }
+
+  .pickup-map__card-title {
+    font-size: 18px;
+    line-height: 24px;
+  }
+
 }
 
 @media (max-height: 799px) and (min-width: 768px) {

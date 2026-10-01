@@ -2,6 +2,10 @@ export function initProductGallery() {
   const gallery = document.querySelector("[data-product-gallery]");
   const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
 
+  if (gallery && window.Fancybox) {
+    window.Fancybox.bind(gallery, '[data-fancybox="product-gallery"]');
+  }
+
   if (gallery && typeof Swiper !== "undefined") {
     const buttons = Array.from(gallery.querySelectorAll("[data-product-thumbnail]"));
     const thumbnails = new Swiper(gallery.querySelector("[data-product-thumbnails]"), {

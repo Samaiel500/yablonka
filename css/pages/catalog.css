@@ -188,6 +188,7 @@
   flex-shrink: 0;
   width: 11px;
   height: 8px;
+  transform: rotate(180deg);
 }
 
 .catalog__grid {
